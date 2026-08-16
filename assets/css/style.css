@@ -7,7 +7,7 @@
   /* Paleta Oficial extraída del emblema del templo */
   --color-bg: #FBF8F5;              /* Marfil suave / Crema vitral */
   --color-surface: #FFFFFF;         /* Blanco puro */
-  --color-surface-subtle: #F5EFEB;  /* Tono cantera/arena suave */
+  --color-surface-subtle: #F6F0EA;  /* Tono cantera/arena suave */
   
   --color-text-primary: #1C1917;     /* Carbón cálido profundo */
   --color-text-secondary: #44403C;   /* Pizarra cálida */
@@ -37,8 +37,8 @@
   --shadow-lg: 0 14px 28px -4px rgba(28, 25, 23, 0.1);
   
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-pill: 9999px;
   
   --max-width: 1080px;
@@ -67,6 +67,12 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -206,12 +212,12 @@ p {
   width: 100%;
 }
 
-/* Header & Logo */
+/* Header & Logo Control Estricto */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(251, 248, 245, 0.95);
+  background-color: rgba(251, 248, 245, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border-subtle);
@@ -237,15 +243,20 @@ p {
   align-items: center;
   gap: 0.85rem;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .brand-logo-img {
-  width: 46px;
-  height: 46px;
+  width: 44px !important;
+  height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--color-accent-stone);
   box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  display: block;
 }
 
 .brand-title {
@@ -363,11 +374,14 @@ p {
 }
 
 .hero-card-img-thumb {
-  width: 36px;
-  height: 36px;
+  width: 38px !important;
+  height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--color-accent-stone);
+  display: block;
 }
 
 .service-item-row {
@@ -498,69 +512,84 @@ p {
   flex-shrink: 0;
 }
 
-/* Calendario Semanal / Actividades */
-.calendar-grid {
+/* ==========================================================================
+   Actividades Semanales — Tarjetas Visuales con Iconografía Dedicada
+   ========================================================================== */
+.activities-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   gap: 1.25rem;
 }
 
-.calendar-card {
+.activity-card {
   background: var(--color-surface);
-  border: 1.5px solid var(--color-border-subtle);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.35rem;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  position: relative;
   transition: all var(--transition);
 }
 
-.calendar-card:hover {
+.activity-card:hover {
   border-color: var(--color-primary);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
-.calendar-card-header {
-  background: var(--color-surface-subtle);
-  border-bottom: 1px solid var(--color-border-subtle);
-  padding: 0.65rem 1rem;
+.activity-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
-.calendar-day-name {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.activity-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
   color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary-border);
+  flex-shrink: 0;
 }
 
-.calendar-time-badge {
+.activity-day-tag {
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-subtle);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-subtle);
 }
 
-.calendar-card-body {
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.calendar-activity-title {
-  font-size: 1.15rem;
+.activity-name {
+  font-size: 1.3rem;
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
-.calendar-activity-desc {
+.activity-time {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.activity-desc {
   font-size: 0.88rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
@@ -713,11 +742,14 @@ p {
 }
 
 .footer-logo-img {
-  width: 44px;
-  height: 44px;
+  width: 44px !important;
+  height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--color-accent-stone);
+  display: block;
 }
 
 .footer-brand h3 {
@@ -836,10 +868,6 @@ p {
 
 /* Responsiveness */
 @media (max-width: 960px) {
-  .calendar-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
   .hero-grid,
   .location-grid {
     grid-template-columns: 1fr;
@@ -847,12 +875,6 @@ p {
   }
   
   .sunday-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .calendar-grid {
     grid-template-columns: 1fr;
   }
 }

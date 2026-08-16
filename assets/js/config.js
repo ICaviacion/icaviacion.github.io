@@ -2,15 +2,14 @@
  * ==============================================================================
  * CONFIGURACIÓN GENERAL — IGLESIA CRISTIANA EN AVIACIÓN
  * ==============================================================================
- * Este archivo centraliza la información editable de la iglesia.
- * Cuando los datos reales sean confirmados por el liderazgo,
- * simplemente edita los valores entre comillas a continuación.
+ * Información verificada y configurable de la iglesia.
  * ==============================================================================
  */
 
 const CHURCH_CONFIG = {
   // --- IDENTIDAD ---
   name: "Iglesia Cristiana en Aviación",
+  legalName: "Iglesia Cristiana en Aviación A.R.",
   shortName: "Iglesia Cristiana en Aviación",
   taglineDraft: "Un lugar para conocer a Dios, crecer en la fe y caminar juntos como comunidad.",
   
@@ -18,101 +17,100 @@ const CHURCH_CONFIG = {
   location: {
     city: "San Luis Potosí",
     state: "S.L.P., México",
-    neighborhood: "Colonia Aviación",
-    streetReference: "Vasco de Quiroga",
-    // Reemplazar cuando se confirme el número exterior exacto:
-    exactAddress: "[DIRECCIÓN EXACTA POR CONFIRMAR]",
-    fullAddressDisplay: "Colonia Aviación (sobre/cerca de Vasco de Quiroga), San Luis Potosí, S.L.P.",
-    // Enlace de Google Maps (actualmente apunta a la zona de Vasco de Quiroga, Col. Aviación, SLP)
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Vasco+de+Quiroga+Colonia+Aviacion+San+Luis+Potosi",
-    // Código de iframe de Google Maps si se desea incrustar mapa interactivo
-    mapEmbedUrl: ""
+    neighborhood: "Industrial Aviación 1ra Secc",
+    streetAddress: "Av. Vasco de Quiroga 115",
+    postalCode: "78140",
+    fullAddressDisplay: "Av. Vasco de Quiroga 115, Industrial Aviación 1ra Secc, 78140 San Luis Potosí, S.L.P., México",
+    latitude: 22.1785899,
+    longitude: -100.9954835,
+    googleMapsUrl: "https://www.google.com/maps/place/Iglesia+Cristiana+en+Aviaci%C3%B3n+A.R./@22.1785899,-100.9954835,17z",
+    mapEmbedUrl: "https://maps.google.com/maps?q=Av.+Vasco+de+Quiroga+115,+Industrial+Aviacion+1ra+Secc,+78140+San+Luis+Potos%C3%AD,+S.L.P.,+Mexico&t=&z=16&ie=UTF8&iwloc=&output=embed"
   },
 
-  // --- HORARIOS DE REUNIONES (DRAFT / PENDIENTES DE CONFIRMAR) ---
+  // --- HORARIOS DE REUNIONES VERIFICADOS ---
   schedules: [
     {
-      id: "culto-dominical",
+      id: "culto-dominical-1",
       day: "Domingo",
-      title: "Reunión Dominical",
-      time: "[HORARIO POR CONFIRMAR]",
-      description: "Tiempo principal de adoración en comunidad, oración y estudio de la Palabra de Dios para toda la familia.",
-      icon: "calendar",
-      badge: "Reunión Principal"
+      title: "Primer Servicio Dominical",
+      time: "9:00 AM",
+      description: "Reunión matutina de alabanza, comunión, oración y exposición de la Palabra de Dios.",
+      icon: "sun",
+      badge: "Matutino"
     },
     {
-      id: "estudio-biblico",
-      day: "Entre Semana",
-      title: "Estudio Bíblico",
-      time: "[HORARIO POR CONFIRMAR]",
-      description: "Espacio para profundizar juntos en las Escrituras y fortalecer el crecimiento espiritual.",
-      icon: "book-open",
-      badge: "Discipulado"
+      id: "culto-dominical-2",
+      day: "Domingo",
+      title: "Segundo Servicio Dominical",
+      time: "11:30 AM",
+      description: "Reunión de mediodía para toda la familia con alabanza congregacional y mensaje bíblico.",
+      icon: "sun-medium",
+      badge: "Mediodía"
     },
     {
-      id: "tiempo-oracion",
-      day: "Entre Semana",
-      title: "Tiempo de Oración",
-      time: "[HORARIO POR CONFIRMAR]",
-      description: "Reunión dedicada a interceder por las familias, nuestra comunidad y necesidades particulares.",
-      icon: "heart",
-      badge: "Comunidad"
+      id: "culto-dominical-3",
+      day: "Domingo",
+      title: "Tercer Servicio Dominical",
+      time: "6:00 PM",
+      description: "Servicio vespertino de adoración, comunión fraternal y enseñanza bíblica práctica.",
+      icon: "sunset",
+      badge: "Vespertino"
     }
   ],
 
   // --- CONTACTO Y REDES SOCIALES ---
   contact: {
-    // Teléfono principal (p. ej. "444 123 4567")
-    phone: "[TELÉFONO POR CONFIRMAR]",
-    phoneLink: "", // p. ej. "tel:+524441234567"
+    phone: "+52 444 811 0970",
+    phoneDisplay: "(444) 811-0970",
+    phoneLink: "tel:+524448110970",
     
-    // WhatsApp (p. ej. "5214441234567")
-    whatsappNumber: "[WHATSAPP POR CONFIRMAR]",
-    whatsappLink: "", // p. ej. "https://wa.me/524441234567?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20iglesia"
+    // WhatsApp (puede enlazarse al número telefónico o número dedicado)
+    whatsappNumber: "+52 444 811 0970",
+    whatsappLink: "https://wa.me/524448110970?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Iglesia%20Cristiana%20en%20Aviaci%C3%B3n",
     
     // Correo electrónico
     email: "[CORREO ELECTRÓNICO POR CONFIRMAR]",
-    emailLink: "", // p. ej. "mailto:contacto@ejemplo.com"
+    emailLink: "",
     
-    // Redes Sociales (dejar vacío "" si aún no existen)
+    // Redes Sociales
     social: {
-      facebook: "[ENLACE DE FACEBOOK POR CONFIRMAR]",
+      facebook: "Iglesia Cristiana en Aviación",
       facebookUrl: "",
-      instagram: "[ENLACE DE INSTAGRAM POR CONFIRMAR]",
+      instagram: "",
       instagramUrl: "",
       youtube: "",
       youtubeUrl: ""
     }
   },
 
-  // --- MINISTERIOS Y COMUNIDAD (ESTRUCTURA BASE) ---
+  // --- MINISTERIOS Y COMUNIDAD ---
   ministries: [
     {
       title: "Familias y Adultos",
-      summary: "Espacios de acompañamiento y edificación mutua para matrimonios, padres y adultos en general.",
-      status: "Información por confirmar"
+      summary: "Espacios de acompañamiento y edificación mutua para matrimonios, padres y adultos.",
+      status: "Activo"
     },
     {
       title: "Jóvenes",
       summary: "Encuentros para jóvenes con enfoque en amistades saludables, propósito de vida y valores bíblicos.",
-      status: "Información por confirmar"
+      status: "Activo"
     },
     {
       title: "Niños / Clases Bíblicas",
-      summary: "Atención y enseñanza adaptada a los más pequeños durante las actividades de la iglesia.",
-      status: "Información por confirmar"
+      summary: "Atención y enseñanza adaptada a los más pequeños durante las actividades dominicales.",
+      status: "Activo"
     },
     {
       title: "Música y Alabanza",
-      summary: "Servicio de dirección musical y alabanza comunitaria durante nuestras reuniones.",
-      status: "Información por confirmar"
+      summary: "Servicio de dirección musical y alabanza comunitaria en los tres servicios dominicales.",
+      status: "Activo"
     }
   ],
 
   // --- AVISOS Y PRÓXIMAS ACTIVIDADES ---
   announcements: {
     hasActiveEvents: false,
-    message: "Próximamente estaremos compartiendo las fechas de nuestras reuniones especiales, conferencias y actividades comunitarias en Colonia Aviación."
+    message: "Te invitamos a acompañarnos este domingo en cualquiera de nuestros tres servicios: 9:00 AM, 11:30 AM y 6:00 PM en Av. Vasco de Quiroga 115."
   }
 };
 

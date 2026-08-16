@@ -118,7 +118,7 @@ function initCopyAddress() {
   if (!copyBtn) return;
 
   copyBtn.addEventListener('click', () => {
-    const addressText = "Colonia Aviación, Vasco de Quiroga, San Luis Potosí, S.L.P., México";
+    const addressText = "Av. Vasco de Quiroga 115, Industrial Aviación 1ra Secc, 78140 San Luis Potosí, S.L.P.";
     
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(addressText).then(() => {
@@ -144,7 +144,7 @@ function fallbackCopyText(text) {
     document.execCommand('copy');
     showToast("¡Dirección copiada al portapapeles!");
   } catch (err) {
-    showToast("Colonia Aviación, Vasco de Quiroga, San Luis Potosí");
+    showToast("Av. Vasco de Quiroga 115, San Luis Potosí");
   }
   document.body.removeChild(textArea);
 }

@@ -71,11 +71,11 @@
       <nav class="nav-wrapper">
         <ul class="nav-menu">
           <li><a href="#inicio" class="nav-link">Inicio</a></li>
-          <li><a href="#bienvenidos" class="nav-link">Nosotros</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
           <li><a href="#horarios" class="nav-link">Horarios</a></li>
           <li><a href="#actividades" class="nav-link">Actividades</a></li>
           <li><a href="#galeria" class="nav-link">Galería</a></li>
-          <li><a href="#fe" class="nav-link">Declaración de Fe</a></li>
+          <li><a href="#fe" class="nav-link">Creencias</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
@@ -115,11 +115,11 @@
       </div>
       <ul class="mobile-nav-links">
         <li><a href="#inicio" class="mobile-nav-link">Inicio</a></li>
-        <li><a href="#bienvenidos" class="mobile-nav-link">Nosotros</a></li>
+        <li><a href="#nosotros" class="mobile-nav-link">Nosotros</a></li>
         <li><a href="#horarios" class="mobile-nav-link">Servicios Dominicales</a></li>
         <li><a href="#actividades" class="mobile-nav-link">Actividades Semanales</a></li>
         <li><a href="#galeria" class="mobile-nav-link">Galería de Comunidad</a></li>
-        <li><a href="#fe" class="mobile-nav-link">Declaración de Fe</a></li>
+        <li><a href="#fe" class="mobile-nav-link">Creencias</a></li>
         <li><a href="#ubicacion" class="mobile-nav-link">Ubicación y Mapa</a></li>
         <li><a href="#contacto" class="mobile-nav-link">Contacto</a></li>
       </ul>
@@ -213,15 +213,15 @@
     </section>
 
     <!-- =======================================================================
-         2. BIENVENIDOS
+         2. NOSOTROS
          ======================================================================= -->
-    <section class="section section--alt" id="bienvenidos">
+    <section class="section section--alt" id="nosotros">
       <div class="container">
         <div class="welcome-container">
           <div class="welcome-box">
             
             <div class="welcome-content">
-              <h2>Bienvenidos</h2>
+              <h2>Nosotros</h2>
               <p>
                 En la Iglesia Cristiana en Aviación nos reunimos como comunidad para adorar a Dios a través de estudiar
                 las Escrituras, entonar cantos de alabanza, y apoyarnos como familia.
@@ -389,7 +389,7 @@
     </section>
 
     <!-- =======================================================================
-         5. GALERÍA DE COMUNIDAD (FOTOS REALES)
+         5. GALERÍA DE COMUNIDAD (CARRUSEL)
          ======================================================================= -->
     <section class="section" id="galeria">
       <div class="container">
@@ -401,75 +401,105 @@
           </p>
         </div>
 
-        <div class="gallery-grid">
-          
-          <!-- Foto 1: Liderazgo y Servidores -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/staff.jpg" alt="Equipo de servicio y liderazgo" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Equipo de Servicio y Liderazgo</span>
-              <span class="gallery-card-tag">Servicio</span>
+        <div class="carousel-container">
+          <button class="carousel-nav-btn carousel-nav-prev" id="galleryPrevBtn" aria-label="Foto anterior" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <div class="carousel-viewport" id="galleryViewport" tabindex="0" role="region" aria-label="Galería de fotos de la comunidad">
+            <div class="carousel-track" id="galleryTrack">
+              
+              <!-- Foto 1: Liderazgo y Servidores -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/staff.jpg" alt="Equipo de servicio y liderazgo" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Equipo de Servicio y Liderazgo</span>
+                    <span class="gallery-card-tag">Servicio</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Foto 2: Femenil -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/mujeres.jpg" alt="Reunión Femenil" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Comunión Femenil</span>
+                    <span class="gallery-card-tag">Femenil</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Foto 3: Hombres / Varones -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/hombres.jpg" alt="Reunión de Varones" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Fraternidad de Varones</span>
+                    <span class="gallery-card-tag">Varones</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Foto 4: Celebraciones -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/navidad2.jpg" alt="Celebraciones y eventos congregacionales" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Celebraciones y Convivencia</span>
+                    <span class="gallery-card-tag">Eventos</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Foto 5: Familia y Comunidad -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/manzanita_y_kendall.jpg" alt="Familia y miembros de la comunidad" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Familia de Fe</span>
+                    <span class="gallery-card-tag">Comunidad</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Foto 6: Gozo y Adoración -->
+              <div class="carousel-slide">
+                <div class="gallery-card">
+                  <div class="gallery-card-img-wrap">
+                    <img src="assets/photos/navidad.jpg" alt="Reunión especial de gozo y alabanza" class="gallery-card-img" loading="lazy">
+                  </div>
+                  <div class="gallery-card-caption">
+                    <span>Gozo y Adoración</span>
+                    <span class="gallery-card-tag">Alabanza</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <!-- Foto 2: Femenil -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/mujeres.jpg" alt="Reunión Femenil" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Comunión Femenil</span>
-              <span class="gallery-card-tag">Femenil</span>
-            </div>
-          </div>
-
-          <!-- Foto 3: Hombres / Varones -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/hombres.jpg" alt="Reunión de Varones" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Fraternidad de Varones</span>
-              <span class="gallery-card-tag">Varones</span>
-            </div>
-          </div>
-
-          <!-- Foto 4: Celebraciones -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/navidad2.jpg" alt="Celebraciones y eventos congregacionales" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Celebraciones y Convivencia</span>
-              <span class="gallery-card-tag">Eventos</span>
-            </div>
-          </div>
-
-          <!-- Foto 5: Familia y Comunidad -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/manzanita_y_kendall.jpg" alt="Familia y miembros de la comunidad" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Familia de Fe</span>
-              <span class="gallery-card-tag">Comunidad</span>
-            </div>
-          </div>
-
-          <!-- Foto 6: Gozo y Navidad -->
-          <div class="gallery-card">
-            <div class="gallery-card-img-wrap">
-              <img src="assets/photos/navidad.jpg" alt="Reunión especial de gozo y comunión" class="gallery-card-img" loading="lazy">
-            </div>
-            <div class="gallery-card-caption">
-              <span>Gozo y Adoración</span>
-              <span class="gallery-card-tag">Alabanza</span>
-            </div>
-          </div>
-
+          <button class="carousel-nav-btn carousel-nav-next" id="galleryNextBtn" aria-label="Siguiente foto" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
         </div>
+
+        <div class="carousel-indicators" id="galleryIndicators" role="tablist" aria-label="Navegación de fotos"></div>
 
       </div>
     </section>
@@ -491,13 +521,7 @@
           
           <!-- 1. Las Sagradas Escrituras -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-              </svg>
-              Las Sagradas Escrituras
-            </h3>
+            <h3 class="faith-card-title">Las Sagradas Escrituras</h3>
             <p class="faith-card-text">
               Creemos que la Biblia es la única Palabra de Dios divinamente inspirada, plenamente confiable y dada en su totalidad cuando el Espíritu Santo guió a los escritores sagrados, de modo que las palabras que escribieron constituyen la Palabra de Dios. Es, por tanto, la guía final de suprema autoridad para la fe y la práctica.
             </p>
@@ -508,14 +532,7 @@
 
           <!-- 2. Dios Trino -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 3v18"/>
-                <path d="M3 12h18"/>
-              </svg>
-              Dios Trino
-            </h3>
+            <h3 class="faith-card-title">Dios Trino</h3>
             <p class="faith-card-text">
               Creemos que la Deidad existe eternamente en tres personas: el Padre, el Hijo y el Espíritu Santo; y que estos tres son un solo Dios, con la misma naturaleza, atributos y perfección, dignos de la misma adoración, confianza y obediencia.
             </p>
@@ -526,13 +543,7 @@
 
           <!-- 3. Jesucristo -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20"/>
-                <path d="M7 7h10"/>
-              </svg>
-              Jesucristo
-            </h3>
+            <h3 class="faith-card-title">Jesucristo</h3>
             <p class="faith-card-text">
               Creemos que Dios el Hijo es Jesucristo, enviado por Dios el Padre, nacido de una virgen y sin pecado, crucificado como sacrificio expiatorio por los pecados de toda la humanidad de todos los tiempos, quien murió en la cruz, fue sepultado, resucitó de entre los muertos y regresará nuevamente a esta tierra conforme a las Sagradas Escrituras.
             </p>
@@ -543,12 +554,7 @@
 
           <!-- 4. La Salvación -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-              La Salvación
-            </h3>
+            <h3 class="faith-card-title">La Salvación</h3>
             <p class="faith-card-text">
               Creemos que todos los seres humanos son pecadores en necesidad del Salvador, Jesucristo, y que solo pueden experimentar la salvación a través de una fe personal y activa en Él.
             </p>
@@ -559,19 +565,7 @@
 
           <!-- 5. El Espíritu Santo -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v6"/>
-                <path d="M12 18v4"/>
-                <path d="M4.93 4.93l4.24 4.24"/>
-                <path d="M14.83 14.83l4.24 4.24"/>
-                <path d="M2 12h6"/>
-                <path d="M18 12h4"/>
-                <path d="M4.93 19.07l4.24-4.24"/>
-                <path d="M14.83 9.17l4.24-4.24"/>
-              </svg>
-              El Espíritu Santo
-            </h3>
+            <h3 class="faith-card-title">El Espíritu Santo</h3>
             <p class="faith-card-text">
               Creemos que Dios el Espíritu Santo regenera a las personas en un nuevo nacimiento espiritual al confiar en Cristo como Salvador y Señor, y mediante su presencia y poder continuos las capacita para la vida espiritual y el servicio.
             </p>
@@ -582,12 +576,7 @@
 
           <!-- 6. Cielo e Infierno -->
           <div class="faith-card">
-            <h3 class="faith-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-              </svg>
-              Cielo e Infierno
-            </h3>
+            <h3 class="faith-card-title">Cielo e Infierno</h3>
             <p class="faith-card-text">
               Creemos en la existencia del cielo como el destino eterno de los creyentes, y del infierno como el destino eterno de los no creyentes, según lo enseñan las Sagradas Escrituras.
             </p>
@@ -750,11 +739,11 @@
 
         <ul class="footer-links">
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#bienvenidos">Nosotros</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#horarios">Horarios</a></li>
           <li><a href="#actividades">Actividades</a></li>
           <li><a href="#galeria">Galería</a></li>
-          <li><a href="#fe">Declaración de Fe</a></li>
+          <li><a href="#fe">Creencias</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
           <li><a href="https://www.facebook.com/iglesia.aviacion.1" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         </ul>

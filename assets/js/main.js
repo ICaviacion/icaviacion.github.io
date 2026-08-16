@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initMobileNav();
+  initGalleryCarousel();
   initFaqAccordion();
   initCopyAddress();
   initDynamicConfig();
@@ -216,4 +217,83 @@ function initDynamicConfig() {
       btn.removeAttribute('data-pending-notice');
     });
   }
+}
+
+/**
+ * 8. Carrusel interactivo de la galería
+ */
+function initGalleryCarousel() {
+  const viewport = document.getElementById('galleryViewport');
+  const prevBtn = document.getElementById('galleryPrevBtn');
+  const nextBtn = document.getElementById('galleryNextBtn');
+  const indicatorsContainer = document.getElementById('galleryIndicators');
+  if (!viewport || !prevBtn || !nextBtn || !indicatorsContainer) return;
+
+  const slides = Array.from(viewport.querySelectorAll('.carousel-slide'));
+  if (slides.length === 0) return;
+
+  // Crear botones de indicadores / puntos
+  indicatorsContainer.innerHTML = '';
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir a la foto ${index + 1}`);
+    dot.addEventListener('click', () => {
+      scrollToSlide(index);
+    });
+    indicatorsContainer.appendChild(dot);
+    return dot;
+  });
+
+  function getSlideWidth() {
+    return slides[0].offsetWidth + 16;
+  }
+
+  function scrollToSlide(index) {
+    const targetSlide = slides[index];
+    if (targetSlide) {
+      viewport.scrollTo({
+        left: targetSlide.offsetLeft - viewport.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    const step = getSlideWidth();
+    viewport.scrollBy({ left: -step, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const step = getSlideWidth();
+    viewport.scrollBy({ left: step, behavior: 'smooth' });
+  });
+
+  // Navegación por teclado (flechas izquierda / derecha)
+  viewport.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevBtn.click();
+    } else if (e.key === 'ArrowRight') {
+      nextBtn.click();
+    }
+  });
+
+  // Actualizar indicador activo durante el desplazamiento
+  let scrollTimeout;
+  viewport.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const scrollPos = viewport.scrollLeft + 20;
+      let activeIndex = 0;
+      slides.forEach((slide, idx) => {
+        if (slide.offsetLeft - viewport.offsetLeft <= scrollPos) {
+          activeIndex = idx;
+        }
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+      });
+    }, 50);
+  }, { passive: true });
 }

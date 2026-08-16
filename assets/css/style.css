@@ -663,12 +663,41 @@ p {
 }
 
 /* ==========================================================================
-   Galería de Fotos de la Comunidad
+   Galería de Fotos de la Comunidad (Carrusel Compacto)
    ========================================================================== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+.carousel-container {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 0.25rem;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-slide {
+  flex: 0 0 calc(50% - 0.5rem);
+  min-width: 260px;
+  scroll-snap-align: start;
 }
 
 .gallery-card {
@@ -680,17 +709,18 @@ p {
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .gallery-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: var(--color-accent-stone);
 }
 
 .gallery-card-img-wrap {
   width: 100%;
-  height: 230px;
+  height: 175px;
   overflow: hidden;
   background: var(--color-surface-subtle);
 }
@@ -699,6 +729,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.4s ease;
 }
 
@@ -707,8 +738,8 @@ p {
 }
 
 .gallery-card-caption {
-  padding: 1rem 1.25rem;
-  font-size: 0.92rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-text-primary);
   background: var(--color-surface);
@@ -716,14 +747,77 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .gallery-card-tag {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.carousel-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  z-index: 2;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background: var(--color-accent-stone);
+}
+
+.carousel-dot.active {
+  width: 22px;
+  border-radius: 10px;
+  background: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -757,9 +851,7 @@ p {
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  line-height: 1.3;
 }
 
 .faith-card-text {
@@ -1055,10 +1147,6 @@ p {
   .calendar-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   
   .hero-grid,
   .location-grid {
@@ -1081,10 +1169,23 @@ p {
   }
 }
 
-@media (max-width: 600px) {
-  .calendar-grid,
-  .gallery-grid {
+@media (max-width: 640px) {
+  .calendar-grid {
     grid-template-columns: 1fr;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-container {
+    gap: 0.4rem;
   }
 }
 

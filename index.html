@@ -6,15 +6,19 @@
   <title>Iglesia Cristiana en Aviación — San Luis Potosí</title>
   
   <!-- SEO & Metadatos -->
-  <meta name="description" content="Iglesia Cristiana en Aviación, ubicada en Av. Vasco de Quiroga 115, Industrial Aviación, San Luis Potosí. Servicios dominicales: 9:00 AM, 11:30 AM y 6:00 PM.">
+  <meta name="description" content="Sitio oficial de la Iglesia Cristiana en Aviación en San Luis Potosí. Servicios dominicales a las 9:00 AM, 11:30 AM y 6:00 PM con iglesia infantil. Actividades semanales en Av. Vasco de Quiroga 115.">
   <meta name="keywords" content="Iglesia Cristiana en Aviación, San Luis Potosí, Vasco de Quiroga 115, Industrial Aviación, Templo Cristiano">
   <meta name="author" content="Iglesia Cristiana en Aviación">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/perfil.jpg">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://icaviacion.github.io/">
   <meta property="og:title" content="Iglesia Cristiana en Aviación — San Luis Potosí">
-  <meta property="og:description" content="Servicios dominicales a las 9:00 AM, 11:30 AM y 6:00 PM con iglesia infantil. Transmisión en vivo en Facebook.">
+  <meta property="og:description" content="Servicios dominicales a las 9:00 AM, 11:30 AM y 6:00 PM. Actividades semanales en Av. Vasco de Quiroga 115.">
+  <meta property="og:image" content="https://icaviacion.github.io/assets/perfil.jpg">
   <meta property="og:locale" content="es_MX">
 
   <!-- Google Fonts -->
@@ -31,6 +35,7 @@
     "@context": "https://schema.org",
     "@type": "Church",
     "name": "Iglesia Cristiana en Aviación",
+    "image": "https://icaviacion.github.io/assets/perfil.jpg",
     "url": "https://icaviacion.github.io/",
     "telephone": "+524448110970",
     "sameAs": [
@@ -56,11 +61,7 @@
     <div class="container nav-container">
       
       <a href="#inicio" class="brand-link" aria-label="Inicio">
-        <div class="brand-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 7H7"/>
-          </svg>
-        </div>
+        <img src="assets/perfil.jpg" alt="Logo Iglesia Cristiana en Aviación" class="brand-logo-img">
         <div class="brand-text">
           <span class="brand-title">Iglesia Cristiana en Aviación</span>
           <span class="brand-subtitle">San Luis Potosí</span>
@@ -157,15 +158,18 @@
           </div>
 
           <div class="hero-card">
-            <h2 class="hero-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              Domingos
-            </h2>
+            <div class="hero-card-header">
+              <h2 class="hero-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                Domingos
+              </h2>
+              <img src="assets/perfil.jpg" alt="Emblema de la iglesia" class="hero-card-img-thumb">
+            </div>
 
             <div class="service-item-row">
               <span>Primer Servicio</span>
@@ -181,7 +185,13 @@
             </div>
 
             <div class="children-badge-box">
-              👶 Iglesia infantil durante cada servicio
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Iglesia infantil durante cada servicio</span>
             </div>
           </div>
 
@@ -233,7 +243,7 @@
             <div class="sunday-label">Segundo Servicio</div>
             <div class="sunday-time">11:30 AM</div>
             <p>Reunión de mediodía transmitida en vivo a través de Facebook.</p>
-            <span class="sunday-tag-live">● Transmisión en Vivo</span>
+            <span class="sunday-tag-live"><span class="live-dot"></span> Transmisión en Vivo</span>
           </div>
 
           <div class="sunday-card">
@@ -245,61 +255,99 @@
         </div>
 
         <div class="children-notice">
-          👶 Contamos con Iglesia Infantil durante cada uno de los tres servicios dominicales.
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span>Contamos con Iglesia Infantil durante cada uno de los tres servicios dominicales.</span>
         </div>
 
       </div>
     </section>
 
     <!-- =======================================================================
-         4. ACTIVIDADES SEMANALES
+         4. ACTIVIDADES SEMANALES (CALENDARIO)
          ======================================================================= -->
     <section class="section section--alt" id="actividades">
       <div class="container">
         
         <div class="section-header">
-          <span class="section-tag">Entre Semana</span>
-          <h2>Actividades Semanales</h2>
+          <span class="section-tag">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Calendario Semanal
+          </span>
+          <h2>Actividades Entre Semana</h2>
           <p class="section-subtitle">
-            Reuniones de grupo, discipulado y oración durante la semana.
+            Grupos de estudio, discipulado y oración de lunes a sábado.
           </p>
         </div>
 
-        <div class="weekly-list">
+        <div class="calendar-grid">
           
-          <div class="weekly-card">
-            <div class="weekly-day">Lunes</div>
-            <div class="weekly-name">Célula</div>
-            <div class="weekly-time">8:00 PM</div>
-            <div class="weekly-desc">Reunión en grupos de estudio y oración.</div>
+          <!-- Lunes -->
+          <div class="calendar-card">
+            <div class="calendar-card-header">
+              <span class="calendar-day-name">Lunes</span>
+              <span class="calendar-time-badge">8:00 PM</span>
+            </div>
+            <div class="calendar-card-body">
+              <div class="calendar-activity-title">Célula</div>
+              <p class="calendar-activity-desc">Reunión en grupos para compartir la Palabra y orar juntos.</p>
+            </div>
           </div>
 
-          <div class="weekly-card">
-            <div class="weekly-day">Martes</div>
-            <div class="weekly-name">Femenil</div>
-            <div class="weekly-time">6:30 PM</div>
-            <div class="weekly-desc">Espacio de edificación y estudio para mujeres.</div>
+          <!-- Martes -->
+          <div class="calendar-card">
+            <div class="calendar-card-header">
+              <span class="calendar-day-name">Martes</span>
+              <span class="calendar-time-badge">6:30 PM</span>
+            </div>
+            <div class="calendar-card-body">
+              <div class="calendar-activity-title">Femenil</div>
+              <p class="calendar-activity-desc">Espacio de edificación, convivencia y estudio para mujeres.</p>
+            </div>
           </div>
 
-          <div class="weekly-card">
-            <div class="weekly-day">Miércoles</div>
-            <div class="weekly-name">Familiar</div>
-            <div class="weekly-time">6:30 PM</div>
-            <div class="weekly-desc">Reunión general para toda la familia.</div>
+          <!-- Miércoles -->
+          <div class="calendar-card">
+            <div class="calendar-card-header">
+              <span class="calendar-day-name">Miércoles</span>
+              <span class="calendar-time-badge">6:30 PM</span>
+            </div>
+            <div class="calendar-card-body">
+              <div class="calendar-activity-title">Familiar</div>
+              <p class="calendar-activity-desc">Reunión de estudio y oración para toda la familia.</p>
+            </div>
           </div>
 
-          <div class="weekly-card">
-            <div class="weekly-day">Jueves</div>
-            <div class="weekly-name">Matrimonios</div>
-            <div class="weekly-time">6:00 PM</div>
-            <div class="weekly-desc">Reunión y apoyo para parejas.</div>
+          <!-- Jueves -->
+          <div class="calendar-card">
+            <div class="calendar-card-header">
+              <span class="calendar-day-name">Jueves</span>
+              <span class="calendar-time-badge">6:00 PM</span>
+            </div>
+            <div class="calendar-card-body">
+              <div class="calendar-activity-title">Matrimonios</div>
+              <p class="calendar-activity-desc">Reunión para parejas y fortalecimiento de la vida conyugal.</p>
+            </div>
           </div>
 
-          <div class="weekly-card">
-            <div class="weekly-day">Sábado</div>
-            <div class="weekly-name">Jóvenes</div>
-            <div class="weekly-time">5:30 PM</div>
-            <div class="weekly-desc">Junta y actividades para jóvenes.</div>
+          <!-- Sábado -->
+          <div class="calendar-card">
+            <div class="calendar-card-header">
+              <span class="calendar-day-name">Sábado</span>
+              <span class="calendar-time-badge">5:30 PM</span>
+            </div>
+            <div class="calendar-card-body">
+              <div class="calendar-activity-title">Jóvenes</div>
+              <p class="calendar-activity-desc">Junta y actividades enfocadas en jóvenes y adolescentes.</p>
+            </div>
           </div>
 
         </div>
@@ -315,7 +363,7 @@
         <div class="facebook-banner">
           <h2>Transmisiones en Vivo y Noticias</h2>
           <p>
-            Sigue nuestra página de Facebook para avisos, eventos y la transmisión en vivo del servicio dominical de las 11:30 AM.
+            Sigue nuestra página oficial de Facebook para avisos, eventos y la transmisión en vivo del servicio dominical de las 11:30 AM.
           </p>
           <a href="https://www.facebook.com/iglesia.aviacion.1" target="_blank" rel="noopener noreferrer" class="btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -445,9 +493,12 @@
     <div class="container">
       
       <div class="footer-content">
-        <div class="footer-brand">
-          <h3>Iglesia Cristiana en Aviación</h3>
-          <p>Av. Vasco de Quiroga 115, Industrial Aviación 1ra Secc, 78140 San Luis Potosí, S.L.P.</p>
+        <div class="footer-brand-wrap">
+          <img src="assets/perfil.jpg" alt="Logo de la iglesia" class="footer-logo-img">
+          <div class="footer-brand">
+            <h3>Iglesia Cristiana en Aviación</h3>
+            <p>Av. Vasco de Quiroga 115, Industrial Aviación 1ra Secc, 78140 San Luis Potosí, S.L.P.</p>
+          </div>
         </div>
 
         <ul class="footer-links">

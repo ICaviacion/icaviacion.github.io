@@ -130,7 +130,7 @@ p {
 
 .section-header {
   text-align: center;
-  max-width: 620px;
+  max-width: 680px;
   margin: 0 auto 3rem auto;
 }
 
@@ -153,6 +153,54 @@ p {
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--color-text-secondary);
+}
+
+/* Citas Bíblicas Elegantes */
+.verse-banner {
+  margin: 1rem 0 1.75rem 0;
+  padding: 0.85rem 1.25rem;
+  background: rgba(254, 242, 242, 0.7);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.verse-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.verse-ref {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-verse {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--color-border-subtle);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.card-verse-ref {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  margin-top: 0.2rem;
 }
 
 /* Botones */
@@ -344,14 +392,14 @@ p {
 }
 
 .hero-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   color: var(--color-text-primary);
 }
 
 .hero-lead {
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   color: var(--color-text-secondary);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
   max-width: 540px;
 }
 
@@ -359,6 +407,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
+  margin-top: 1.5rem;
 }
 
 /* Tarjeta Hero Domingos */
@@ -434,7 +483,7 @@ p {
 
 /* Sección Bienvenidos — Texto a la izquierda, vitral a la derecha */
 .welcome-container {
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
@@ -581,7 +630,7 @@ p {
 }
 
 /* ==========================================================================
-   Calendario de Actividades Semanales (Formato Calendario por Día)
+   Calendario de Actividades Semanales (Formato Calendario por Día con Citas)
    ========================================================================== */
 .calendar-grid {
   display: grid;
@@ -634,6 +683,7 @@ p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 0.5rem;
 }
 
 .calendar-activity-title {
@@ -641,14 +691,14 @@ p {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 
 .calendar-activity-desc {
   font-size: 0.88rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
-  margin-top: auto;
+  margin-bottom: 0.5rem;
 }
 
 /* Sección Ubicación y Mapa */

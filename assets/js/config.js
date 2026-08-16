@@ -10,7 +10,7 @@ const CHURCH_CONFIG = {
   legalName: "Iglesia Cristiana en Aviación A.R.",
   shortName: "Iglesia Cristiana en Aviación",
   tagline: "Un lugar para conocer a Dios, crecer en la fe y caminar juntos como comunidad.",
-  
+
   // --- UBICACIÓN ---
   location: {
     address: "Av. Vasco de Quiroga 115, Industrial Aviación 1ra Secc, 78140 San Luis Potosí, S.L.P.",
@@ -20,20 +20,20 @@ const CHURCH_CONFIG = {
 
   // --- SERVICIOS DOMINICALES ---
   sundayServices: [
-    { 
-      time: "9:00 AM", 
+    {
+      time: "9:00 AM",
       title: "Primer Servicio",
-      description: "Reunión matutina de alabanza, comunión y mensaje bíblico." 
+      description: "Reunión matutina de alabanza, comunión y mensaje bíblico."
     },
-    { 
-      time: "11:30 AM", 
-      title: "Segundo Servicio", 
+    {
+      time: "11:30 AM",
+      title: "Segundo Servicio",
       description: "Reunión matutina de alabanza, comunión y mensaje bíblico.",
       isLive: true,
       liveUrl: "https://www.facebook.com/iglesia.aviacion.1"
     },
-    { 
-      time: "6:00 PM", 
+    {
+      time: "6:00 PM",
       title: "Tercer Servicio",
       description: "Reunión vespertina de alabanza, mensaje bíblico y comunión."
     }
@@ -42,8 +42,8 @@ const CHURCH_CONFIG = {
 
   // --- ACTIVIDADES ENTRE SEMANA ---
   weeklyActivities: [
-    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión en grupos para compartir la Palabra y orar juntos." },
-    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de edificación, convivencia y estudio para mujeres." },
+    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión para compartir la Palabra y orar juntos." },
+    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de convivencia y estudio para mujeres." },
     { day: "Miércoles", time: "6:30 PM", name: "Familiar", description: "Reunión de estudio y oración para toda la familia." },
     { day: "Jueves", time: "6:00 PM", name: "Matrimonios", description: "Reunión para parejas y fortalecimiento de la vida conyugal." },
     { day: "Sábado", time: "5:30 PM", name: "Jóvenes", description: "Junta y actividades enfocadas en jóvenes y adolescentes." }

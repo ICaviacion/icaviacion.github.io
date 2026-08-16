@@ -9,7 +9,7 @@ const CHURCH_CONFIG = {
   name: "Iglesia Cristiana en Aviación",
   legalName: "Iglesia Cristiana en Aviación A.R.",
   shortName: "Iglesia Cristiana en Aviación",
-  tagline: "Un lugar para adorar a Dios, crecer en la fe y caminar juntos como comunidad.",
+  tagline: "Un lugar para conocer a Dios, crecer en la fe y caminar juntos como comunidad.",
   
   // --- UBICACIÓN ---
   location: {
@@ -42,29 +42,33 @@ const CHURCH_CONFIG = {
 
   // --- ACTIVIDADES ENTRE SEMANA ---
   weeklyActivities: [
-    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión en grupos para compartir la Palabra y orar juntos.", verse: "Gálatas 5:13" },
-    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de edificación, convivencia y estudio para mujeres.", verse: "Colosenses 3:16" },
-    { day: "Miércoles", time: "6:30 PM", name: "Familiar", description: "Reunión de estudio y oración para toda la familia.", verse: "Filipenses 4:6" },
-    { day: "Jueves", time: "6:00 PM", name: "Matrimonios", description: "Reunión para parejas y fortalecimiento de la vida conyugal.", verse: "Efesios 5:2" },
-    { day: "Sábado", time: "5:30 PM", name: "Jóvenes", description: "Junta y actividades enfocadas en jóvenes y adolescentes.", verse: "1 Timoteo 4:12" }
+    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión en grupos para compartir la Palabra y orar juntos." },
+    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de edificación, convivencia y estudio para mujeres." },
+    { day: "Miércoles", time: "6:30 PM", name: "Familiar", description: "Reunión de estudio y oración para toda la familia." },
+    { day: "Jueves", time: "6:00 PM", name: "Matrimonios", description: "Reunión para parejas y fortalecimiento de la vida conyugal." },
+    { day: "Sábado", time: "5:30 PM", name: "Jóvenes", description: "Junta y actividades enfocadas en jóvenes y adolescentes." }
   ],
 
-  // --- CITAS BÍBLICAS DEL SITIO ---
+  // --- LAS 5 CITAS BÍBLICAS PRINCIPALES ---
   verses: {
-    welcome: {
+    hero: {
       text: "Por tanto, recibíos los unos a los otros, como también Cristo nos recibió, para gloria de Dios.",
       ref: "Romanos 15:7"
     },
-    community: {
-      text: "Considerémonos unos a otros para estimularnos al amor y a las buenas obras; no dejando de congregarnos…",
-      ref: "Hebreos 10:24–25"
+    about: {
+      text: "La palabra de Cristo habite en abundancia en vosotros…",
+      ref: "Colosenses 3:16"
     },
-    worship: {
-      text: "Venid, aclamemos alegremente a Jehová; cantemos con júbilo a la roca de nuestra salvación.",
-      ref: "Salmo 95:1–2"
+    community: {
+      text: "Considerémonos unos a otros para estimularnos al amor…",
+      ref: "Hebreos 10:24"
+    },
+    children: {
+      text: "Las repetirás a tus hijos…",
+      ref: "Deuteronomio 6:7"
     },
     invitation: {
-      text: "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
+      text: "Venid a mí todos los que estáis trabajados y cargados…",
       ref: "Mateo 11:28"
     }
   },

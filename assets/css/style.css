@@ -134,22 +134,6 @@ p {
   margin: 0 auto 3rem auto;
 }
 
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-primary);
-  background-color: var(--color-primary-light);
-  border: 1px solid var(--color-primary-border);
-  padding: 0.3rem 0.85rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 0.75rem;
-}
-
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--color-text-secondary);
@@ -182,25 +166,6 @@ p {
   margin-top: 0.35rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-.card-verse {
-  margin-top: auto;
-  padding-top: 0.65rem;
-  border-top: 1px dashed var(--color-border-subtle);
-  font-size: 0.78rem;
-  font-style: italic;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
-.card-verse-ref {
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.72rem;
-  color: var(--color-primary);
-  margin-top: 0.2rem;
 }
 
 /* Botones */
@@ -336,7 +301,7 @@ p {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.4rem;
   list-style: none;
 }
 
@@ -629,9 +594,7 @@ p {
   flex-shrink: 0;
 }
 
-/* ==========================================================================
-   Calendario de Actividades Semanales (Formato Calendario por Día con Citas)
-   ========================================================================== */
+/* Calendario de Actividades Semanales */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -683,7 +646,6 @@ p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 0.5rem;
 }
 
 .calendar-activity-title {
@@ -691,14 +653,67 @@ p {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
 .calendar-activity-desc {
   font-size: 0.88rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Declaración de Fe / Lo que Creemos
+   ========================================================================== */
+.faith-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.faith-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+}
+
+.faith-card:hover {
+  border-color: var(--color-accent-stone);
+  box-shadow: var(--shadow-md);
+}
+
+.faith-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faith-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.faith-card-verses {
+  margin-top: auto;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface-subtle);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
 }
 
 /* Sección Ubicación y Mapa */

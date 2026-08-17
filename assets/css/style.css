@@ -701,15 +701,15 @@ p {
 }
 
 .gallery-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  height: 220px;
+  background: var(--color-surface-subtle);
+  display: block;
 }
 
 .gallery-card:hover {
@@ -718,48 +718,17 @@ p {
   border-color: var(--color-accent-stone);
 }
 
-.gallery-card-img-wrap {
-  width: 100%;
-  height: 175px;
-  overflow: hidden;
-  background: var(--color-surface-subtle);
-}
-
 .gallery-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
   transition: transform 0.4s ease;
 }
 
 .gallery-card:hover .gallery-card-img {
   transform: scale(1.04);
-}
-
-.gallery-card-caption {
-  padding: 0.75rem 1rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.gallery-card-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-primary);
-  background: var(--color-primary-light);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  white-space: nowrap;
 }
 
 .carousel-nav-btn {

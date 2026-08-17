@@ -64,8 +64,8 @@ const CHURCH_CONFIG = {
       ref: "Hebreos 10:24"
     },
     children: {
-      text: "Las repetirás a tus hijos…",
-      ref: "Deuteronomio 6:7"
+      text: "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él.",
+      ref: "Proverbios 22:6"
     },
     invitation: {
       text: "Venid a mí todos los que estáis trabajados y cargados…",

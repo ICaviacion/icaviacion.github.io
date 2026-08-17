@@ -1030,9 +1030,26 @@ p {
 }
 
 .footer-bottom {
-  padding-top: 1.5rem;
+  padding-top: 1.75rem;
   text-align: center;
   font-size: 0.85rem;
+  color: #78716C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.footer-doxology {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-accent-stone);
+  letter-spacing: 0.03em;
+}
+
+.footer-copyright {
+  font-size: 0.82rem;
   color: #78716C;
 }
 

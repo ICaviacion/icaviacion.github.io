@@ -220,9 +220,10 @@ function initDynamicConfig() {
 }
 
 /**
- * 8. Carrusel interactivo de la galería
+ * 8. Carrusel interactivo y automático de la galería
  */
 function initGalleryCarousel() {
+  const container = document.querySelector('.welcome-gallery-wrap') || document.querySelector('.carousel-container');
   const viewport = document.getElementById('galleryViewport');
   const prevBtn = document.getElementById('galleryPrevBtn');
   const nextBtn = document.getElementById('galleryNextBtn');
@@ -232,6 +233,10 @@ function initGalleryCarousel() {
   const slides = Array.from(viewport.querySelectorAll('.carousel-slide'));
   if (slides.length === 0) return;
 
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_INTERVAL = 3800;
+
   // Crear botones de indicadores / puntos
   indicatorsContainer.innerHTML = '';
   const dots = slides.map((_, index) => {
@@ -240,15 +245,13 @@ function initGalleryCarousel() {
     dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
     dot.setAttribute('aria-label', `Ir a la foto ${index + 1}`);
     dot.addEventListener('click', () => {
-      scrollToSlide(index);
+      currentIndex = index;
+      scrollToSlide(currentIndex);
+      resetAutoplay();
     });
     indicatorsContainer.appendChild(dot);
     return dot;
   });
-
-  function getSlideWidth() {
-    return slides[0].offsetWidth + 16;
-  }
 
   function scrollToSlide(index) {
     const targetSlide = slides[index];
@@ -257,29 +260,85 @@ function initGalleryCarousel() {
         left: targetSlide.offsetLeft - viewport.offsetLeft,
         behavior: 'smooth'
       });
+      updateActiveDot(index);
     }
   }
 
+  function updateActiveDot(index) {
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
+  }
+
+  function nextSlide() {
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+    if (viewport.scrollLeft >= maxScroll - 20 || currentIndex >= slides.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    scrollToSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    if (currentIndex <= 0 || viewport.scrollLeft <= 10) {
+      currentIndex = slides.length - 1;
+    } else {
+      currentIndex--;
+    }
+    scrollToSlide(currentIndex);
+  }
+
   prevBtn.addEventListener('click', () => {
-    const step = getSlideWidth();
-    viewport.scrollBy({ left: -step, behavior: 'smooth' });
+    prevSlide();
+    resetAutoplay();
   });
 
   nextBtn.addEventListener('click', () => {
-    const step = getSlideWidth();
-    viewport.scrollBy({ left: step, behavior: 'smooth' });
+    nextSlide();
+    resetAutoplay();
   });
 
-  // Navegación por teclado (flechas izquierda / derecha)
+  // Navegación por teclado
   viewport.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
-      prevBtn.click();
+      prevSlide();
+      resetAutoplay();
     } else if (e.key === 'ArrowRight') {
-      nextBtn.click();
+      nextSlide();
+      resetAutoplay();
     }
   });
 
-  // Actualizar indicador activo durante el desplazamiento
+  // Autoplay (rotación automática)
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Pausar rotación en hover, toque o interacción
+  if (container) {
+    container.addEventListener('mouseenter', stopAutoplay);
+    container.addEventListener('mouseleave', startAutoplay);
+    container.addEventListener('touchstart', stopAutoplay, { passive: true });
+    container.addEventListener('touchend', () => {
+      setTimeout(startAutoplay, 2500);
+    });
+  }
+
+  // Actualizar indicador activo durante el desplazamiento manual
   let scrollTimeout;
   viewport.addEventListener('scroll', () => {
     clearTimeout(scrollTimeout);
@@ -291,9 +350,11 @@ function initGalleryCarousel() {
           activeIndex = idx;
         }
       });
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === activeIndex);
-      });
-    }, 50);
+      currentIndex = activeIndex;
+      updateActiveDot(activeIndex);
+    }, 60);
   }, { passive: true });
+
+  // Iniciar rotación automática
+  startAutoplay();
 }

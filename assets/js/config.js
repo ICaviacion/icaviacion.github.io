@@ -80,6 +80,28 @@ const CHURCH_CONFIG = {
     whatsappLink: "https://wa.me/524448110970?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Iglesia%20Cristiana%20en%20Aviaci%C3%B3n",
     facebookUrl: "https://www.facebook.com/iglesia.aviacion.1",
     facebookName: "facebook.com/iglesia.aviacion.1"
+  },
+
+  // --- GALERÍA DINÁMICA VÍA GITHUB API ---
+  gallery: {
+    githubOwner: "ICaviacion",
+    githubRepo: "icaviacion.github.io",
+    photosPath: "assets/photos",
+    autoplayInterval: 3800,
+    preferredFirst: "navidad2.jpg",
+    defaultPhotos: [
+      "navidad2.jpg",
+      "cruz.jpeg",
+      "pastor.jpeg",
+      "escuelitas.jpeg",
+      "mujeres.jpg",
+      "hombres.jpg",
+      "celula.jpeg",
+      "staff.jpg",
+      "anexo.jpeg",
+      "manzanita_y_kendall.jpg",
+      "navidad.jpg"
+    ]
   }
 };
 

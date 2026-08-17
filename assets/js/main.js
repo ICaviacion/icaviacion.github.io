@@ -220,38 +220,48 @@ function initDynamicConfig() {
 }
 
 /**
- * 8. Carrusel interactivo y automático de la galería
+ * 8. Carrusel interactivo y dinámico de la galería
+ * Carga automáticamente fotos de assets/photos vía GitHub API
  */
-function initGalleryCarousel() {
+async function initGalleryCarousel() {
   const container = document.querySelector('.welcome-gallery-wrap') || document.querySelector('.carousel-container');
   const viewport = document.getElementById('galleryViewport');
+  const track = document.getElementById('galleryTrack');
   const prevBtn = document.getElementById('galleryPrevBtn');
   const nextBtn = document.getElementById('galleryNextBtn');
   const indicatorsContainer = document.getElementById('galleryIndicators');
-  if (!viewport || !prevBtn || !nextBtn || !indicatorsContainer) return;
+  if (!viewport || !track || !prevBtn || !nextBtn || !indicatorsContainer) return;
 
-  const slides = Array.from(viewport.querySelectorAll('.carousel-slide'));
+  // 1. Cargar fotos dinámicamente desde assets/photos vía GitHub API
+  await loadDynamicGalleryPhotos(track);
+
+  let slides = Array.from(viewport.querySelectorAll('.carousel-slide'));
   if (slides.length === 0) return;
 
   let currentIndex = 0;
   let autoplayTimer = null;
-  const AUTOPLAY_INTERVAL = 3800;
+  const config = window.CHURCH_CONFIG && window.CHURCH_CONFIG.gallery;
+  const AUTOPLAY_INTERVAL = (config && config.autoplayInterval) || 3800;
 
-  // Crear botones de indicadores / puntos
-  indicatorsContainer.innerHTML = '';
-  const dots = slides.map((_, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Ir a la foto ${index + 1}`);
-    dot.addEventListener('click', () => {
-      currentIndex = index;
-      scrollToSlide(currentIndex);
-      resetAutoplay();
+  // Crear o actualizar botones de indicadores / puntos
+  function createIndicators() {
+    indicatorsContainer.innerHTML = '';
+    return slides.map((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir a la foto ${index + 1}`);
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        scrollToSlide(currentIndex);
+        resetAutoplay();
+      });
+      indicatorsContainer.appendChild(dot);
+      return dot;
     });
-    indicatorsContainer.appendChild(dot);
-    return dot;
-  });
+  }
+
+  let dots = createIndicators();
 
   function scrollToSlide(index) {
     const targetSlide = slides[index];
@@ -357,4 +367,83 @@ function initGalleryCarousel() {
 
   // Iniciar rotación automática
   startAutoplay();
+}
+
+/**
+ * Consulta la API de GitHub para obtener todos los archivos de assets/photos automáticamente
+ */
+async function loadDynamicGalleryPhotos(track) {
+  const config = window.CHURCH_CONFIG && window.CHURCH_CONFIG.gallery;
+  const owner = (config && config.githubOwner) || "ICaviacion";
+  const repo = (config && config.githubRepo) || "icaviacion.github.io";
+  const path = (config && config.photosPath) || "assets/photos";
+  const preferredFirst = (config && config.preferredFirst) || "navidad2.jpg";
+  const cacheKey = `ic_gallery_photos_v1_${owner}_${repo}`;
+  const validExtensions = /\.(jpe?g|png|webp|gif|svg)$/i;
+
+  let photoFilenames = null;
+
+  // 1. Revisar caché en sessionStorage (válido por 10 minutos para evitar rate limit de GitHub)
+  try {
+    const cached = sessionStorage.getItem(cacheKey);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (parsed && Array.isArray(parsed.photos) && (Date.now() - parsed.timestamp < 10 * 60 * 1000)) {
+        photoFilenames = parsed.photos;
+      }
+    }
+  } catch (e) {
+    // sessionStorage no disponible
+  }
+
+  // 2. Si no hay caché, consultar la API de GitHub
+  if (!photoFilenames) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+        signal: controller.signal,
+        headers: { Accept: 'application/vnd.github.v3+json' }
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          photoFilenames = data
+            .filter(item => item.type === 'file' && validExtensions.test(item.name))
+            .map(item => item.name);
+
+          // Si preferredFirst existe, ponerlo al inicio
+          if (preferredFirst) {
+            const firstIdx = photoFilenames.indexOf(preferredFirst);
+            if (firstIdx > 0) {
+              photoFilenames.splice(firstIdx, 1);
+              photoFilenames.unshift(preferredFirst);
+            }
+          }
+
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify({
+              timestamp: Date.now(),
+              photos: photoFilenames
+            }));
+          } catch (e) {}
+        }
+      }
+    } catch (e) {
+      // Fallback silencioso en modo offline o desarrollo local
+    }
+  }
+
+  // 3. Si se obtuvieron fotos dinámicas, renderizar las diapositivas
+  if (photoFilenames && photoFilenames.length > 0) {
+    track.innerHTML = photoFilenames.map((filename, idx) => `
+      <div class="carousel-slide">
+        <div class="gallery-card">
+          <img src="${path}/${encodeURIComponent(filename)}" alt="Comunidad en iglesia - Foto ${idx + 1}" class="gallery-card-img" loading="lazy">
+        </div>
+      </div>
+    `).join('');
+  }
 }

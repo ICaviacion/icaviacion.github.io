@@ -663,11 +663,16 @@ p {
 }
 
 /* ==========================================================================
-   Galería de Fotos de la Comunidad (Carrusel Compacto)
+   Galería de Fotos de la Comunidad (Carrusel en Nosotros)
    ========================================================================== */
+.welcome-gallery-wrap {
+  margin-top: 2rem;
+  width: 100%;
+}
+
 .carousel-container {
   position: relative;
-  max-width: 780px;
+  max-width: 880px;
   margin: 0 auto;
   display: flex;
   align-items: center;

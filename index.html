@@ -82,7 +82,6 @@
           <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
           <li><a href="#horarios" class="nav-link">Horarios</a></li>
           <li><a href="#actividades" class="nav-link">Actividades</a></li>
-          <li><a href="#galeria" class="nav-link">Galería</a></li>
           <li><a href="#fe" class="nav-link">Creencias</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
@@ -129,7 +128,6 @@
         <li><a href="#nosotros" class="mobile-nav-link">Nosotros</a></li>
         <li><a href="#horarios" class="mobile-nav-link">Servicios Dominicales</a></li>
         <li><a href="#actividades" class="mobile-nav-link">Actividades Semanales</a></li>
-        <li><a href="#galeria" class="mobile-nav-link">Galería de Comunidad</a></li>
         <li><a href="#fe" class="mobile-nav-link">Creencias</a></li>
         <li><a href="#ubicacion" class="mobile-nav-link">Ubicación y Mapa</a></li>
         <li><a href="#contacto" class="mobile-nav-link">Contacto</a></li>
@@ -212,16 +210,6 @@
               <span>Tercer Servicio</span>
               <span class="time-tag">6:00 PM</span>
             </div>
-
-            <div class="children-badge-box">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-              <span>Iglesia infantil durante cada servicio</span>
-            </div>
           </div>
 
         </div>
@@ -261,6 +249,84 @@
             </div>
 
           </div>
+
+          <!-- Galería / Momentos en Comunidad -->
+          <div class="welcome-gallery-wrap">
+            <div class="carousel-container">
+              <button class="carousel-nav-btn carousel-nav-prev" id="galleryPrevBtn" aria-label="Foto anterior"
+                type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+
+              <div class="carousel-viewport" id="galleryViewport" tabindex="0" role="region"
+                aria-label="Galería de fotos de la comunidad">
+                <div class="carousel-track" id="galleryTrack">
+
+                  <!-- Foto 1: Celebraciones (navidad2.jpg) -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/navidad2.jpg" alt="Celebraciones y eventos congregacionales"
+                        class="gallery-card-img" loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Foto 2: Femenil -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/mujeres.jpg" alt="Reunión Femenil" class="gallery-card-img" loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Foto 3: Hombres / Varones -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/hombres.jpg" alt="Reunión de Varones" class="gallery-card-img"
+                        loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Foto 4: Liderazgo y Servidores (staff.jpg) -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/staff.jpg" alt="Equipo de servicio y liderazgo" class="gallery-card-img"
+                        loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Foto 5: Familia y Comunidad -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/manzanita_y_kendall.jpg" alt="Familia y miembros de la comunidad"
+                        class="gallery-card-img" loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Foto 6: Gozo y Adoración -->
+                  <div class="carousel-slide">
+                    <div class="gallery-card">
+                      <img src="assets/photos/navidad.jpg" alt="Reunión especial de gozo y alabanza"
+                        class="gallery-card-img" loading="lazy">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <button class="carousel-nav-btn carousel-nav-next" id="galleryNextBtn" aria-label="Siguiente foto"
+                type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="carousel-indicators" id="galleryIndicators" role="tablist" aria-label="Navegación de fotos"></div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -288,7 +354,7 @@
           </div>
 
           <!-- Segundo Servicio -->
-          <div class="sunday-card" style="border-color: var(--color-primary);">
+          <div class="sunday-card">
             <div class="sunday-label">Segundo Servicio</div>
             <div class="sunday-time">11:30 AM</div>
             <p>Reunión matutina de alabanza, comunión y mensaje bíblico.</p>
@@ -407,99 +473,9 @@
     </section>
 
     <!-- =======================================================================
-         5. GALERÍA DE COMUNIDAD (CARRUSEL)
+         5. DECLARACIÓN DE FE (LO QUE CREEMOS)
          ======================================================================= -->
-    <section class="section" id="galeria">
-      <div class="container">
-
-        <div class="section-header">
-          <h2>Vida en Comunidad</h2>
-          <p class="section-subtitle">
-            Momentos compartidos en adoración, comunión, discipulado y servicio como familia de fe.
-          </p>
-        </div>
-
-        <div class="carousel-container">
-          <button class="carousel-nav-btn carousel-nav-prev" id="galleryPrevBtn" aria-label="Foto anterior"
-            type="button">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-
-          <div class="carousel-viewport" id="galleryViewport" tabindex="0" role="region"
-            aria-label="Galería de fotos de la comunidad">
-            <div class="carousel-track" id="galleryTrack">
-
-              <!-- Foto 1: Liderazgo y Servidores -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/staff.jpg" alt="Equipo de servicio y liderazgo" class="gallery-card-img"
-                    loading="lazy">
-                </div>
-              </div>
-
-              <!-- Foto 2: Femenil -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/mujeres.jpg" alt="Reunión Femenil" class="gallery-card-img" loading="lazy">
-                </div>
-              </div>
-
-              <!-- Foto 3: Hombres / Varones -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/hombres.jpg" alt="Reunión de Varones" class="gallery-card-img"
-                    loading="lazy">
-                </div>
-              </div>
-
-              <!-- Foto 4: Celebraciones -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/navidad2.jpg" alt="Celebraciones y eventos congregacionales"
-                    class="gallery-card-img" loading="lazy">
-                </div>
-              </div>
-
-              <!-- Foto 5: Familia y Comunidad -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/manzanita_y_kendall.jpg" alt="Familia y miembros de la comunidad"
-                    class="gallery-card-img" loading="lazy">
-                </div>
-              </div>
-
-              <!-- Foto 6: Gozo y Adoración -->
-              <div class="carousel-slide">
-                <div class="gallery-card">
-                  <img src="assets/photos/navidad.jpg" alt="Reunión especial de gozo y alabanza"
-                    class="gallery-card-img" loading="lazy">
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <button class="carousel-nav-btn carousel-nav-next" id="galleryNextBtn" aria-label="Siguiente foto"
-            type="button">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="carousel-indicators" id="galleryIndicators" role="tablist" aria-label="Navegación de fotos"></div>
-
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         6. DECLARACIÓN DE FE (LO QUE CREEMOS)
-         ======================================================================= -->
-    <section class="section section--alt" id="fe">
+    <section class="section" id="fe">
       <div class="container">
 
         <div class="section-header">
@@ -753,7 +729,6 @@
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#horarios">Horarios</a></li>
           <li><a href="#actividades">Actividades</a></li>
-          <li><a href="#galeria">Galería</a></li>
           <li><a href="#fe">Creencias</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
           <li><a href="https://www.facebook.com/iglesia.aviacion.1" target="_blank"

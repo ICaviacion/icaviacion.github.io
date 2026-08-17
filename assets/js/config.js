@@ -42,8 +42,8 @@ const CHURCH_CONFIG = {
 
   // --- ACTIVIDADES ENTRE SEMANA ---
   weeklyActivities: [
-    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión en grupos para compartir la Palabra y orar juntos." },
-    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de edificación, convivencia y estudio para mujeres." },
+    { day: "Lunes", time: "8:00 PM", name: "Célula", description: "Reunión en hogar para compartir la Palabra y orar juntos." },
+    { day: "Martes", time: "6:30 PM", name: "Femenil", description: "Espacio de convivencia y estudio para mujeres." },
     { day: "Miércoles", time: "6:30 PM", name: "Familiar", description: "Reunión de estudio y oración para toda la familia." },
     { day: "Jueves", time: "6:00 PM", name: "Matrimonios", description: "Reunión para parejas y fortalecimiento de la vida conyugal." },
     { day: "Sábado", time: "5:30 PM", name: "Jóvenes", description: "Junta y actividades enfocadas en jóvenes y adolescentes." }
